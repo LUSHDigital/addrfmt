@@ -1,3 +1,7 @@
+[![GoDoc](https://godoc.org/github.com/LUSHDigital/addrfmt?status.svg)](https://godoc.org/github.com/LUSHDigital/addrfmt)
+[![Go Report Card](https://goreportcard.com/badge/github.com/LUSHDigital/addrfmt)](https://goreportcard.com/report/github.com/LUSHDigital/addrfmt)
+[![Build Status](https://travis-ci.org/LUSHDigital/addrfmt.svg?branch=master)](https://travis-ci.org/LUSHDigital/addrfmt)
+
 # addrfmt
 This is a small library and framework for validating and rendering addresses which only relies on the standard library.
 
