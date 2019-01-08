@@ -82,6 +82,14 @@ func Test_Lines_Render(t *testing.T) {
 	equals(t, "hello acb", buf.String())
 }
 
+func Test_Lines_Template(t *testing.T) {
+	lines := addrfmt.Lines([][2]string{})
+	tmpl := lines.Template()
+	if tmpl == nil {
+		t.Error("new template should not be nil")
+	}
+}
+
 func equals(tb testing.TB, expected, actual interface{}) {
 	tb.Helper()
 	if expected != actual {

@@ -62,13 +62,17 @@ func (ls Lines) Exists(ts ...string) error {
 
 // Render address lines to a template
 func (ls Lines) Render(wr io.Writer, t string, fm template.FuncMap) error {
-	funcs := map[string]interface{}{
-		"txt":  ls.Text,
-		"text": ls.Text,
-	}
-	tmpl, err := template.New("").Funcs(funcs).Funcs(fm).Parse(t)
+	tmpl, err := ls.Template().Funcs(fm).Parse(t)
 	if err != nil {
 		return err
 	}
 	return tmpl.Execute(wr, nil)
+}
+
+// Template returns a new empty template with the basic rendering functions
+func (ls Lines) Template() *template.Template {
+	return template.New("").Funcs(map[string]interface{}{
+		"txt":  ls.Text,
+		"text": ls.Text,
+	})
 }
